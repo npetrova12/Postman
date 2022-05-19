@@ -440,13 +440,9 @@ for(let key in responseData.person) {
            console.log(responseData.person[key][i]);
            
        }
-       
    }
-   
    else if(typeof(responseData.person[key]) != 'object') {
    
         console.log(responseData.person[key]);
-        
    }
-   
 }
