@@ -437,8 +437,7 @@ for(let key in responseData.person) {
    
        for(let i = 0; i < Object.keys(responseData.person[key]).length; i++){
        
-           console.log(responseData.person[key][i]);
-           
+           console.log(responseData.person[key][i]);       
        }
    }
    else if(typeof(responseData.person[key]) != 'object') {
