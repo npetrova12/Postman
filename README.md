@@ -432,16 +432,9 @@ pm.expect(responseData.person.u_salary_5_years).to.eql(requestData.salary*4.2)
 22. ***Написать цикл который выведет в консоль по порядку элементы списка из параметра person.
 
 for(let key in responseData.person) {
-
    if(typeof(responseData.person[key]) == 'object'){
-   
        for(let i = 0; i < Object.keys(responseData.person[key]).length; i++){
-       
-           console.log(responseData.person[key][i]);       
-       }
-   }
-   else if(typeof(responseData.person[key]) != 'object') {
-   
+           console.log(responseData.person[key][i]);}
+       } else if(typeof(responseData.person[key]) != 'object') {
         console.log(responseData.person[key]);
-   }
-}
+   }}
