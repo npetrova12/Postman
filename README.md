@@ -1,9 +1,10 @@
-# Postman
+### Postman
+
 This repository contains my Postman practice.
 
-HW_2 Postman
+## HW_2 Postman
 
-http://162.55.220.72:5005/first
+# http://162.55.220.72:5005/first
 
 1. Отправить запрос
 2. Статус код 200
@@ -22,7 +23,7 @@ pm.response.to.have.body("This is the first responce from server!");
 
 });
 
-http://162.55.220.72:5005/user_info_3
+# http://162.55.220.72:5005/user_info_3
 1. Отправить запрос
 2. Статус код 200
 
@@ -105,7 +106,7 @@ pm.expect(responseData.family.u_salary_1_5_year).to.eql(requestData.salary*4)
 
 });
 
-http://162.55.220.72:5005/object_info_3
+# http://162.55.220.72:5005/object_info_3
 1. Отправить запрос.
 2. Статус код 200
 
@@ -187,7 +188,7 @@ pm.expect(responseData.family.pets.dog.age).to.eql(4);
 
 });
 
-http://162.55.220.72:5005/object_info_4
+# http://162.55.220.72:5005/object_info_4
 1. Отправить запрос.
 2. Статус код 200
 
@@ -292,7 +293,7 @@ console.log('элементы списка из параметра salary:',i);
 
 }
 
-http://162.55.220.72:5005/user_info_2
+# http://162.55.220.72:5005/user_info_2
 1. Вставить параметр salary из окружения в request
 2. Вставить параметр age из окружения в age
 3. Вставить параметр name из окружения в name
