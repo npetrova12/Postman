@@ -9,7 +9,7 @@ This repository contains my Postman practice.
 1. Отправить запрос
 2. Статус код 200
 
-```pm.test("Status code is 200", function () {
+pm.test("Status code is 200", function () {
 pm.response.to.have.status(200);
 });
 
