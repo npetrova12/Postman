@@ -11,7 +11,7 @@ This repository contains my Postman practice.
 
 ```
 pm.test("Status code is 200", function () {
-pm.response.to.have.status(200);
+    pm.response.to.have.status(200);
 });
 ```
 
@@ -19,7 +19,7 @@ pm.response.to.have.status(200);
 
 ```
 pm.test("Body is correct", function () {
-pm.response.to.have.body("This is the first responce from server!");
+    pm.response.to.have.body("This is the first responce from server!");
 });
 ```
 
@@ -30,7 +30,7 @@ pm.response.to.have.body("This is the first responce from server!");
 
 ```
 pm.test("Status code is 200", function () {
-pm.response.to.have.status(200);
+    pm.response.to.have.status(200);
 });
 ```
 3. Спарсить response body в json
@@ -44,7 +44,7 @@ console.log(responseData);
 
 ```
 pm.test("Your test name", function() {
-pm.expect(responseData.name).to.eql("Anastasia");
+    pm.expect(responseData.name).to.eql("Anastasia");
 });
 ```
 
@@ -52,7 +52,7 @@ pm.expect(responseData.name).to.eql("Anastasia");
 
 ```
 pm.test("Your test age", function () {
-pm.expect(responseData.age).to.eql("30");
+    pm.expect(responseData.age).to.eql("30");
 });
 ```
 
@@ -60,7 +60,7 @@ pm.expect(responseData.age).to.eql("30");
 
 ```
 pm.test("Your test salary", function () {
-pm.expect(responseData.salary).to.eql(600);
+    pm.expect(responseData.salary).to.eql(600);
 });
 ```
 
@@ -75,7 +75,7 @@ console.log('request data:', requestData);
 
 ```
 pm.test("The response name", function () {
-pm.expect(responseData.name).to.eql(requestData.name);
+    pm.expect(responseData.name).to.eql(requestData.name);
 });
 ```
 
@@ -83,7 +83,7 @@ pm.expect(responseData.name).to.eql(requestData.name);
 
 ```
 pm.test("The response age", function () {
-pm.expect(responseData.age).to.eql(requestData.age);
+    pm.expect(responseData.age).to.eql(requestData.age);
 });
 ```
 
@@ -91,21 +91,21 @@ pm.expect(responseData.age).to.eql(requestData.age);
 
 ```
 pm.test("The response salary", function () {
-pm.expect(responseData.salary).to.eql(Number(requestData.salary));
+    pm.expect(Number(responseData.salary)).to.eql(Number(requestData.salary));
 });
 ```
 
 11. Вывести в консоль параметр family из response.
 
 ```
-console.log('Family: ', responseData.family)
+console.log('Family: ', responseData.family);
 ```
 
 12. Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)
 
 ```
 pm.test("U_salary_1_5_year", function(){
-pm.expect(responseData.family.u_salary_1_5_year).to.eql(requestData.salary*4)
+    pm.expect(responseData.family.u_salary_1_5_year).to.eql(requestData.salary*4)
 });
 ```
 
@@ -116,7 +116,7 @@ pm.expect(responseData.family.u_salary_1_5_year).to.eql(requestData.salary*4)
 
 ```
 pm.test("Status code is 200", function () {
-pm.response.to.have.status(200);
+    pm.response.to.have.status(200);
 });
 ```
 
@@ -124,13 +124,13 @@ pm.response.to.have.status(200);
 
 ```
 let responseData = pm.response.json();
-console.log('Response Data:', responseData)
+console.log('Response Data:', responseData);
 ```
 
 4. Спарсить request.
 
 ```
-let requestData = pm.request.url.query.toObject()
+let requestData = pm.request.url.query.toObject();
 console.log('Request Data:', requestData);
 ```
 
@@ -138,7 +138,7 @@ console.log('Request Data:', requestData);
 
 ```
 pm.test("The response name", function () {
-pm.expect(responseData.name).to.eql(requestData.name)
+    pm.expect(responseData.name).to.eql(requestData.name)
 });
 ```
 
@@ -146,7 +146,7 @@ pm.expect(responseData.name).to.eql(requestData.name)
 
 ```
 pm.test("The response age", function () {
-pm.expect(responseData.age).to.eql(requestData.age)
+    pm.expect(responseData.age).to.eql(requestData.age)
 });
 ```
 
@@ -154,21 +154,21 @@ pm.expect(responseData.age).to.eql(requestData.age)
 
 ```
 pm.test("The response salary", function () {
-pm.expect(responseData.salary).to.eql(Number(requestData.salary))
+    pm.expect(Number(responseData.salary)).to.eql(Number(requestData.salary))
 });
 ```
 
 8. Вывести в консоль параметр family из response.
 
 ```
-console.log('Family: ', responseData.family)
+console.log('Family: ', responseData.family);
 ```
 
 9. Проверить, что у параметра dog есть параметры name
 
 ```
 pm.test("The dog parameter has name",function(){
-pm.expect(responseData.family.pets.dog).to.property('name');
+    pm.expect(responseData.family.pets.dog).to.have.property('name');
 });
 ```
 
@@ -176,7 +176,7 @@ pm.expect(responseData.family.pets.dog).to.property('name');
 
 ```
 pm.test("The dog parameter has age", function(){
-pm.expect(responseData.family.pets.dog).to.have.property('age');
+    pm.expect(responseData.family.pets.dog).to.have.property('age');
 });
 ```
 
@@ -184,7 +184,7 @@ pm.expect(responseData.family.pets.dog).to.have.property('age');
 
 ```
 pm.test("The name parameter is equal Luky", function(){
-pm.expect(responseData.family.pets.dog.name).to.eql('Luky');
+    pm.expect(responseData.family.pets.dog.name).to.eql('Luky');
 });
 ```
 
@@ -192,7 +192,7 @@ pm.expect(responseData.family.pets.dog.name).to.eql('Luky');
 
 ```
 pm.test("The age parameter is equal 4", function(){
-pm.expect(responseData.family.pets.dog.age).to.eql(4);
+    pm.expect(responseData.family.pets.dog.age).to.eql(4);
 });
 ```
 
@@ -203,7 +203,7 @@ pm.expect(responseData.family.pets.dog.age).to.eql(4);
 
 ```
 pm.test("Status code is 200", function () {
-pm.response.to.have.status(200);
+    pm.response.to.have.status(200);
 });
 ```
 
@@ -211,21 +211,21 @@ pm.response.to.have.status(200);
 
 ```
 let responseData = pm.response.json();
-console.log ('Response Data', responseData)
+console.log ('Response Data', responseData);
 ```
 
 4. Спарсить request.
 
 ```
 let requestData = pm.request.url.query.toObject();
-console.log ('Request Data', requestData)
+console.log ('Request Data', requestData);
 ```
 
 5. Проверить, что name в ответе равно name s request (name забрать из request.)
 
 ```
 pm.test("The response name", function () {
-pm.expect(responseData.name).to.eql(requestData.name)
+    pm.expect(responseData.name).to.eql(requestData.name)
 });
 ```
 
@@ -233,45 +233,45 @@ pm.expect(responseData.name).to.eql(requestData.name)
 
 ```
 pm.test("The response age", function () {
-pm.expect(responseData.age).to.eql(Number(requestData.age))
+    pm.expect(Number(responseData.age)).to.eql(Number(requestData.age))
 });
 ```
 
 7. Вывести в консоль параметр salary из request.
 
 ```
-console.log(requestData.salary)
+console.log(requestData.salary);
 ```
 
 8. Вывести в консоль параметр salary из response.
 
 ```
-console.log(responseData.salary)
+console.log(responseData.salary);
 ```
 
 9. Вывести в консоль 0-й элемент параметра salary из response.
 
 ```
-console.log(responseData.salary[0])
+console.log(responseData.salary[0]);
 ```
 
 10. Вывести в консоль 1-й элемент параметра salary параметр salary из response
 
 ```
-console.log(responseData.salary[1])
+console.log(responseData.salary[1]);
 ```
 
 11. Вывести в консоль 2-й элемент параметра salary параметр salary из response.
 
 ```
-console.log(responseData.salary[2])
+console.log(responseData.salary[2]);
 ```
 
 12. Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request.)
 
 ```
-pm.test("The salary [0]", function(){
-pm.expect(responseData.salary[0]).to.eql(Number(requestData.salary));
+pm.test("The salary [0]", function() {
+    pm.expect(Number(responseData.salary[0])).to.eql(Number(requestData.salary));
 });
 ```
 
@@ -286,8 +286,8 @@ pm.expect(Number(responseData.salary[1])).to.eql(requestData.salary*2);
 14. Проверить, что 2-й элемент параметра salary равен salary*3 из request (salary забрать из request.)
 
 ```
-pm.test("The salary[2]", function(){
-pm.expect(Number(responseData.salary[2])).to.eql(requestData.salary*3);
+pm.test("The salary[2]", function() {
+    pm.expect(Number(responseData.salary[2])).to.eql(Number(requestData.salary*3));
 });
 ```
 
@@ -330,7 +330,7 @@ console.log('элементы списка из параметра salary:',i);
 
 ```
 pm.test("Status code is 200", function () {
-pm.response.to.have.status(200);
+    pm.response.to.have.status(200);
 });
 ```
 
@@ -352,7 +352,7 @@ console.log('request data:', requestData);
 
 ```
 pm.test("start_qa_salary", function(){
-pm.expect(responseData).to.have.property('start_qa_salary');
+    pm.expect(responseData).to.have.property('start_qa_salary');
 });
 ```
 
@@ -360,7 +360,7 @@ pm.expect(responseData).to.have.property('start_qa_salary');
 
 ```
 pm.test("qa_salary_after_6_months", function(){
-pm.expect(responseData).to.have.property('qa_salary_after_6_months');
+    pm.expect(responseData).to.have.property('qa_salary_after_6_months');
 });
 ```
 
@@ -368,7 +368,7 @@ pm.expect(responseData).to.have.property('qa_salary_after_6_months');
 
 ```
 pm.test("qa_salary_after_12_months", function(){
-pm.expect(responseData).to.have.property('qa_salary_after_12_months');
+    pm.expect(responseData).to.have.property('qa_salary_after_12_months');
 });
 ```
 
@@ -376,7 +376,7 @@ pm.expect(responseData).to.have.property('qa_salary_after_12_months');
 
 ```
 pm.test("qa_salary_after_1.5_year", function(){
-pm.expect(responseData).to.have.property('qa_salary_after_1.5_year');
+    pm.expect(responseData).to.have.property('qa_salary_after_1.5_year');
 });
 ```
 
@@ -384,7 +384,7 @@ pm.expect(responseData).to.have.property('qa_salary_after_1.5_year');
 
 ```
 pm.test("qa_salary_after_3.5_years", function(){
-pm.expect(responseData).to.have.property('qa_salary_after_3.5_years');
+    pm.expect(responseData).to.have.property('qa_salary_after_3.5_years');
 });
 ```
 
@@ -392,14 +392,14 @@ pm.expect(responseData).to.have.property('qa_salary_after_3.5_years');
 
 ```
 pm.test("person", function(){
-pm.expect(responseData).to.have.property('person');
+    pm.expect(responseData).to.have.property('person');
 });
 ```
 14. Проверить, что параметр start_qa_salary равен salary из request (salary забрать из request.)
 
 ```
 pm.test("salary из request", function () {
-pm.expect(responseData.start_qa_salary).to.eql(Number(requestData.salary))
+    pm.expect(Number(responseData.start_qa_salary)).to.eql(Number(requestData.salary))
 });
 ```
 
@@ -407,7 +407,7 @@ pm.expect(responseData.start_qa_salary).to.eql(Number(requestData.salary))
 
 ```
 pm.test("salary*2 из request", function () {
-pm.expect(responseData.qa_salary_after_6_months).to.eql(Number(requestData.salary*2))
+    pm.expect(Number(responseData.qa_salary_after_6_months)).to.eql(Number(requestData.salary*2))
 });
 ```
 
@@ -415,7 +415,7 @@ pm.expect(responseData.qa_salary_after_6_months).to.eql(Number(requestData.salar
 
 ```
 pm.test("salary*2.7 из request", function () {
-pm.expect(responseData.qa_salary_after_12_months).to.eql(Number(requestData.salary*2.7))
+    pm.expect(Number(responseData.qa_salary_after_12_months)).to.eql(Number(requestData.salary*2.7))
 });
 ```
 
@@ -423,7 +423,7 @@ pm.expect(responseData.qa_salary_after_12_months).to.eql(Number(requestData.sala
 
 ```
 pm.test("salary*3.3 из request", function () {
-pm.expect(responseData['qa_salary_after_1.5_year']).to.eql(Number(requestData.salary*3.3))
+    pm.expect(Number(responseData['qa_salary_after_1.5_year'])).to.eql(Number(requestData.salary*3.3))
 });
 ```
 
@@ -431,7 +431,7 @@ pm.expect(responseData['qa_salary_after_1.5_year']).to.eql(Number(requestData.sa
 
 ```
 pm.test("salary*3.8 из request", function () {
-pm.expect(responseData['qa_salary_after_3.5_years']).to.eql(Number(requestData.salary*3.8))
+    pm.expect(Number(responseData['qa_salary_after_3.5_years'])).to.eql(Number(requestData.salary*3.8))
 });
 ```
 
@@ -439,7 +439,7 @@ pm.expect(responseData['qa_salary_after_3.5_years']).to.eql(Number(requestData.s
 
 ```
 pm.test("The u_name[1]", function(){
-pm.expect(responseData.person.u_name[1]).to.eql(Number(requestData.salary));
+    pm.expect(Number(responseData.person.u_name[1])).to.eql(Number(requestData.salary));
 });
 ```
 
@@ -447,7 +447,7 @@ pm.expect(responseData.person.u_name[1]).to.eql(Number(requestData.salary));
 
 ```
 pm.test("age из request", function () {
-pm.expect(responseData.person.u_age).to.eql(Number(requestData.age))
+    pm.expect(Number(responseData.person.u_age)).to.eql(Number(requestData.age))
 });
 ```
 
@@ -455,18 +455,14 @@ pm.expect(responseData.person.u_age).to.eql(Number(requestData.age))
 
 ```
 pm.test("salary*4.2 из request", function () {
-pm.expect(responseData.person.u_salary_5_years).to.eql(requestData.salary*4.2)
+    pm.expect(responseData.person.u_salary_5_years).to.eql(requestData.salary*4.2)
 });
 ```
 
 22. ***Написать цикл который выведет в консоль по порядку элементы списка из параметра person.
 
 ```
-for(let key in responseData.person) {
-   if(typeof(responseData.person[key]) == 'object'){
-       for(let i = 0; i < Object.keys(responseData.person[key]).length; i++){
-           console.log(responseData.person[key][i]);}
-       } else if(typeof(responseData.person[key]) != 'object') {
-        console.log(responseData.person[key]);
-   }}
+Object.keys(responseData.person).forEach(function(key) {
+    console.log(key, responseData.person[key])
+})
 ```
